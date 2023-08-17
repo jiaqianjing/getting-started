@@ -6,6 +6,7 @@
 // https://stackoverflow.com/a/42817956/1123955
 // https://github.com/motdotla/dotenv/issues/89#issuecomment-587753552
 import 'dotenv/config.js'
+import Zdjd from 'zdjd'
 
 import {
   Contact,
@@ -43,8 +44,12 @@ function onLogout (user: Contact) {
 async function onMessage (msg: Message) {
   log.info('StarterBot', msg.toString())
 
-  if (msg.text() === 'ding') {
+  let tmp_msg = msg.text()
+  if (tmp_msg === 'ding') {
     await msg.say('dong')
+  }
+  if (Zdjd.isZdjd(tmp_msg)) {
+    await msg.say(`检测到尊嘟语，他在巴拉巴拉说：${Zdjd.decode(tmp_msg)}`)
   }
 }
 

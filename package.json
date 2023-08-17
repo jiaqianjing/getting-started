@@ -17,7 +17,7 @@
     "start:walnut": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-walnut npm start",
     "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
-    "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
+    "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_b256b57e25fc4849b65daaaca9986ad9' npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
     "test": "npm-run-all lint test:smoke",
     "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"tests/**/*.spec.ts\""
@@ -34,6 +34,8 @@
   },
   "homepage": "https://github.com/wechaty/getting-started#readme",
   "dependencies": {
+    "zdjd": "^1.0.0",
+    "wechaty-puppet-padlocal": "^1.11.18",
     "dotenv": "^16.0.0",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^1.18.1",
