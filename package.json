@@ -20,7 +20,8 @@
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_b256b57e25fc4849b65daaaca9986ad9' npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
     "test": "npm-run-all lint test:smoke",
-    "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"tests/**/*.spec.ts\""
+    "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"tests/**/*.spec.ts\"",
+    "test:zdjd": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node test.ts"
   },
   "repository": {
     "type": "git",
@@ -34,19 +35,20 @@
   },
   "homepage": "https://github.com/wechaty/getting-started#readme",
   "dependencies": {
-    "zdjd": "^1.0.0",
-    "wechaty-puppet-padlocal": "^1.11.18",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^1.18.1",
     "wechaty-cqrs": "^0.7.5",
     "wechaty-plugin-contrib": "^1.11.1",
     "wechaty-puppet-oicq": "^1.10.2",
+    "wechaty-puppet-padlocal": "^1.11.18",
     "wechaty-puppet-walnut": "^1.11.6",
     "wechaty-puppet-wechat": "^1.18.1",
     "wechaty-puppet-wechat4u": "~1.11.1",
     "wechaty-puppet-whatsapp": "^1.19.0",
-    "wechaty-puppet-xp": "^1.10.20"
+    "wechaty-puppet-xp": "^1.10.20",
+    "zdjd": "^1.0.0"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^1.0.4",
@@ -59,7 +61,7 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "npx git-scripts-pre-push"
+      "": "npx git-scripts-pre-push"
     }
   }
 }
